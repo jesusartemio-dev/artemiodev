@@ -13,9 +13,10 @@ import { caseStudies } from "@/data/portfolio";
 export default function Home() {
   return (
     <div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <Hero />
+      {/* Hero — full width with its own background */}
+      <Hero />
 
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollReveal>
           <TrustSection />
         </ScrollReveal>
