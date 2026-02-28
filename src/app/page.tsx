@@ -1,103 +1,129 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import TrustSection from "@/components/TrustSection";
+import OEEBox from "@/components/OEEBox";
+import ScrollReveal from "@/components/ScrollReveal";
+import ServiceCard from "@/components/ServiceCard";
+import CaseCard from "@/components/CaseCard";
+import { Button } from "@/components/ui/button";
+import { MessageCircle, Calendar } from "lucide-react";
+import Link from "next/link";
+import { services } from "@/data/services";
+import { caseStudies } from "@/data/portfolio";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <div className="max-w-6xl mx-auto px-6">
+        <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <ScrollReveal>
+          <TrustSection />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="py-16">
+            <h2 className="text-3xl font-extrabold text-center text-[#0a0f1e] mb-3">Experiencia en Automatización y Control</h2>
+            <p className="text-center text-[#5a6270] mb-10 max-w-2xl mx-auto">
+              Más de una década conectando la planta con la toma de decisiones.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="rounded-2xl border border-[#e2e6ee] bg-white p-6">
+                <h3 className="font-bold text-lg text-[#0a0f1e] mb-3">Experiencia técnica</h3>
+                <ul className="space-y-2">
+                  {[
+                    "Programación de PLCs Allen-Bradley, Siemens y Schneider Electric.",
+                    "Diseño y configuración de sistemas SCADA y control distribuido.",
+                    "Integración de datos industriales vía OPC UA, Modbus y MQTT.",
+                    "Automatización de líneas de producción y puesta en marcha en planta.",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-[#5a6270]">
+                      <span className="w-1.5 h-1.5 bg-[#1847c2] rounded-full mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[#e2e6ee] bg-white p-6">
+                <h3 className="font-bold text-lg text-[#0a0f1e] mb-3">Integración OT/IT</h3>
+                <ul className="space-y-2">
+                  {[
+                    "Conexión de PLCs y servidores Historian con bases de datos PostgreSQL.",
+                    "Desarrollo de dashboards de producción y OEE en tiempo real.",
+                    "Digitalización de procesos industriales e integración con sistemas ERP.",
+                    "Implementación de soluciones Industria 4.0 para trazabilidad y eficiencia.",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-[#5a6270]">
+                      <span className="w-1.5 h-1.5 bg-[#0ea86a] rounded-full mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Services preview */}
+        <ScrollReveal>
+          <section className="py-16">
+            <h2 className="text-3xl font-extrabold text-center text-[#0a0f1e] mb-3">Servicios</h2>
+            <p className="text-center text-[#5a6270] mb-10 max-w-2xl mx-auto">
+              Soluciones de desarrollo web industrial adaptadas a tu operación.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <ServiceCard key={service.title} service={service} />
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      </div>
+
+      {/* OEE Box — full width */}
+      <ScrollReveal>
+        <OEEBox />
+      </ScrollReveal>
+
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Portfolio preview */}
+        <ScrollReveal>
+          <section className="py-16">
+            <h2 className="text-3xl font-extrabold text-center text-[#0a0f1e] mb-3">Casos de Éxito</h2>
+            <p className="text-center text-[#5a6270] mb-10 max-w-2xl mx-auto">
+              Proyectos reales con resultados medibles.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {caseStudies.map((caseStudy) => (
+                <CaseCard key={caseStudy.title} caseStudy={caseStudy} />
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Final CTA */}
+        <ScrollReveal>
+          <section className="text-center py-20">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a0f1e] mb-4">¿Conectamos tu planta con el negocio?</h2>
+            <p className="text-[#5a6270] mb-8 max-w-2xl mx-auto">
+              Pídeme un MVP con tus datos operativos reales. Desarrollo soluciones que generan resultados medibles.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#0ea86a] hover:bg-[#0c9058] shadow-lg shadow-[#0ea86a]/25 rounded-xl text-base px-8 h-12">
+                <Link href="https://wa.me/51950307588?text=Hola%20Jes%C3%BAs%2C%20me%20interesa%20una%20soluci%C3%B3n%20web%20industrial.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  WhatsApp
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild className="rounded-xl text-base px-8 h-12 border-[#1847c2] text-[#1847c2] hover:bg-[#1847c2] hover:text-white transition-colors">
+                <Link href="https://calendly.com/jesusartemio/30min" target="_blank" rel="noopener noreferrer">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Agendar llamada
+                </Link>
+              </Button>
+            </div>
+          </section>
+        </ScrollReveal>
+      </div>
     </div>
   );
 }
