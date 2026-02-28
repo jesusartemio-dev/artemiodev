@@ -236,15 +236,20 @@ export default function ContactForm() {
             )}
           </div>
 
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id="contact-nda"
-              checked={nda}
-              onCheckedChange={(checked) => setValue("nda", !!checked)}
-            />
-            <label htmlFor="contact-nda" className="text-sm text-[#0a0f1e]">
-              Solicitar NDA antes de compartir detalles
-            </label>
+          <div>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="contact-nda"
+                checked={nda}
+                onCheckedChange={(checked) => setValue("nda", !!checked)}
+              />
+              <label htmlFor="contact-nda" className="text-sm text-[#0a0f1e]">
+                Solicitar NDA antes de compartir detalles
+              </label>
+            </div>
+            <p className="text-xs text-gray-500 mt-1 ml-6">
+              (Acuerdo de confidencialidad para proteger la información de tu proyecto)
+            </p>
           </div>
 
           <Button
