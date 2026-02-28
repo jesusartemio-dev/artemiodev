@@ -18,36 +18,36 @@ const gauges = [
 
 function OEEDashboardMockup() {
   return (
-    <div className="relative w-full max-w-[420px] mx-auto lg:mx-0">
+    <div className="relative w-full max-w-[520px] mx-auto lg:mx-0">
       {/* Browser window wrapper */}
       <div
         className="rounded-2xl overflow-hidden lg:[transform:perspective(1000px)_rotateY(-5deg)] transition-transform duration-500"
         style={{
-          boxShadow: "0 32px 80px rgba(0,0,0,0.15), 0 8px 24px rgba(24,71,194,0.1)",
+          boxShadow: "0 24px 60px rgba(0,0,0,0.12), 0 6px 20px rgba(24,71,194,0.08)",
         }}
       >
         {/* Browser bar */}
-        <div className="bg-[#1e293b] px-4 py-2.5 flex items-center gap-3">
+        <div className="bg-[#1e293b] px-4 py-2 flex items-center gap-3">
           <div className="flex gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-[#ef4444]" />
-            <span className="w-3 h-3 rounded-full bg-[#eab308]" />
-            <span className="w-3 h-3 rounded-full bg-[#22c55e]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ef4444]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#eab308]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e]" />
           </div>
-          <div className="flex-1 bg-[#0f172a] rounded-md px-3 py-1 text-[11px] text-white/40 font-mono text-center">
+          <div className="flex-1 bg-[#0f172a] rounded-md px-3 py-0.5 text-[11px] text-white/40 font-mono text-center">
             demo.artemiodev.com
           </div>
         </div>
 
         {/* Dashboard content */}
-        <div className="animate-float bg-[#0f172a] p-5">
-          <div className="flex items-center justify-between mb-4">
+        <div className="animate-float bg-[#0f172a] p-4 sm:p-5">
+          <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-white/70 uppercase tracking-wider">OEE Dashboard</span>
             <span className="flex items-center gap-1.5 text-xs text-[#0ea86a] font-medium">
               <span className="w-1.5 h-1.5 bg-[#0ea86a] rounded-full animate-pulse-dot" />
               RUNNING · L01
             </span>
           </div>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
             {gauges.map((g) => {
               const circumference = 2 * Math.PI * 28;
               const offset = circumference - (g.value / 100) * circumference;
@@ -91,7 +91,7 @@ function OEEDashboardMockup() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f8faff]">
+    <section className="relative overflow-hidden bg-[#f8faff] lg:min-h-[calc(100vh-60px)] lg:flex lg:items-center">
       {/* Dot grid pattern — right half only */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -124,12 +124,12 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12 sm:pb-16">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-[55%_45%] gap-10 lg:gap-12 items-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12 lg:py-0 w-full">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left column — text */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2.5 mb-7 bg-white border-2 border-[#1847c2]/15 rounded-full px-4 py-2 shadow-sm">
+            <div className="inline-flex items-center gap-2.5 mb-5 bg-white border-2 border-[#1847c2]/15 rounded-full px-4 py-1.5 shadow-sm">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ripple absolute inset-0 rounded-full bg-[#0ea86a]/60" />
                 <span className="relative rounded-full h-3 w-3 bg-[#0ea86a]" />
@@ -141,10 +141,10 @@ export default function Hero() {
 
             {/* H1 */}
             <h1
-              className="font-extrabold text-[#0a0f1e] mb-6"
+              className="font-extrabold text-[#0a0f1e] mb-4"
               style={{
-                fontSize: "clamp(36px, 5.5vw, 72px)",
-                lineHeight: 1.05,
+                fontSize: "clamp(32px, 3.5vw, 52px)",
+                lineHeight: 1.08,
               }}
             >
               Conecto tu{" "}
@@ -160,23 +160,23 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg text-[#4b5563] mb-8 max-w-[480px] leading-relaxed">
+            <p className="text-[15px] text-[#4b5563] mb-5 max-w-[480px] leading-relaxed">
               Ingeniero electrónico con +18 años en automatización. Desarrollo aplicaciones
               que transforman datos operativos en decisiones de negocio.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#1847c2] hover:bg-[#1339a0] rounded-xl text-base font-semibold px-8 h-[52px] min-h-[44px] hover:-translate-y-0.5 transition-all duration-200"
+                className="bg-[#1847c2] hover:bg-[#1339a0] rounded-xl text-sm font-semibold px-6 h-11 min-h-[44px] hover:-translate-y-0.5 transition-all duration-200"
                 style={{
                   boxShadow: "0 4px 24px rgba(24,71,194,0.35)",
                 }}
               >
                 <Link href="/contacto">
-                  <span className="relative flex h-2 w-2 mr-2.5">
+                  <span className="relative flex h-2 w-2 mr-2">
                     <span className="animate-ripple absolute inset-0 rounded-full bg-white/60" />
                     <span className="relative rounded-full h-2 w-2 bg-white" />
                   </span>
@@ -187,7 +187,7 @@ export default function Hero() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="bg-white border-2 border-[#e5e7eb] hover:border-[#1847c2] rounded-xl text-base font-semibold px-8 h-[52px] min-h-[44px] transition-all duration-200"
+                className="bg-white border-2 border-[#e5e7eb] hover:border-[#1847c2] rounded-xl text-sm font-semibold px-6 h-11 min-h-[44px] transition-all duration-200"
               >
                 <Link href="https://calendly.com/jesusartemio/30min" target="_blank" rel="noopener noreferrer">
                   <Calendar className="w-4 h-4 mr-2" />
@@ -197,15 +197,15 @@ export default function Hero() {
             </div>
 
             {/* KPIs — inline row */}
-            <div className="mt-10 pt-8 border-t border-[#e2e6ee]">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+            <div className="mt-6 pt-5 border-t border-[#e2e6ee]">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0">
                 {kpis.map((kpi, i) => (
                   <div
                     key={kpi.label}
                     className={`flex flex-col md:items-center ${i > 0 ? "md:border-l md:border-[#e2e6ee]" : ""}`}
                   >
-                    <p className="text-2xl sm:text-3xl font-bold text-[#1847c2]">{kpi.value}</p>
-                    <p className="text-xs sm:text-sm text-[#5a6270] mt-0.5">{kpi.label}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-[#1847c2]">{kpi.value}</p>
+                    <p className="text-xs text-[#5a6270] mt-0.5">{kpi.label}</p>
                   </div>
                 ))}
               </div>
