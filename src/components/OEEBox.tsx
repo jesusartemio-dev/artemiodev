@@ -106,9 +106,9 @@ export default function OEEBox() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-white text-[#0a0f1e] hover:bg-white/90 rounded-xl text-base px-8 h-12 font-semibold min-h-[44px]">
+            <Button asChild size="lg" className="bg-[#0ea86a] hover:bg-[#0c9058] text-white rounded-xl text-base px-8 h-12 font-semibold min-h-[44px] shadow-lg shadow-[#0ea86a]/30">
               <Link href="https://demo.artemiodev.com" target="_blank" rel="noopener noreferrer">
-                Ver Demo en vivo
+                🚀 Ver Demo en Vivo
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="rounded-xl text-base px-8 h-12 border-white/20 text-white hover:bg-white/10 hover:text-white min-h-[44px]">
