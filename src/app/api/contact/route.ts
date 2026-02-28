@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
 
     await getResend().emails.send({
       from: "onboarding@resend.dev",
-      to: ["jesusartemio.dev@gmail.com"],
+      to: ["jesusartemiodev@gmail.com"],
       subject: `Nuevo contacto desde artemiodev.com: ${data.name} - ${data.company}`,
       html: `
         <h2>Nuevo mensaje de contacto</h2>
