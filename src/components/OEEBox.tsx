@@ -69,22 +69,22 @@ function AndonBoardMockup() {
 
 export default function OEEBox() {
   return (
-    <section className="relative -mx-6 px-6 py-20 md:py-28 bg-gradient-to-br from-[#0a0f1e] to-[#1847c2] overflow-hidden">
+    <section className="relative py-16 sm:py-20 md:py-28 bg-gradient-to-br from-[#0a0f1e] to-[#1847c2] overflow-hidden">
       {/* Subtle grid overlay */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none' stroke='%23fff' stroke-width='.5'/%3E%3C/svg%3E\")" }} />
 
-      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Left — content */}
         <div>
           <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#1847c2] bg-white/10 backdrop-blur rounded-full border border-white/20 mb-6">
             Producto
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-[1.1] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-[1.1] mb-4">
             OEE Box
           </h2>
 
-          <p className="text-lg md:text-xl text-white/70 mb-8 leading-relaxed max-w-lg">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 mb-8 leading-relaxed max-w-lg">
             Monitoreo OEE plug &amp; play.{" "}
             <span className="text-white font-semibold">Conecta al PLC en 10 minutos.</span>
           </p>
@@ -98,18 +98,20 @@ export default function OEEBox() {
             ))}
           </ul>
 
-          <p className="text-sm text-white/50 mb-6">
-            Desde <span className="text-2xl font-bold text-white">$1,200 USD</span>{" "}
-            <span className="text-white/50">/ instalación</span>
-          </p>
+          <div className="bg-white/10 backdrop-blur rounded-xl px-5 py-4 inline-block mb-6 border border-white/10">
+            <p className="text-sm text-white/60">
+              Desde <span className="text-3xl font-bold text-white">$1,200 USD</span>{" "}
+              <span className="text-white/50">/ instalación</span>
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-white text-[#0a0f1e] hover:bg-white/90 rounded-xl text-base px-8 h-12 font-semibold">
+            <Button asChild size="lg" className="bg-white text-[#0a0f1e] hover:bg-white/90 rounded-xl text-base px-8 h-12 font-semibold min-h-[44px]">
               <Link href="https://demo.artemiodev.com" target="_blank" rel="noopener noreferrer">
                 Ver Demo en vivo
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="rounded-xl text-base px-8 h-12 border-white/20 text-white hover:bg-white/10 hover:text-white">
+            <Button variant="outline" size="lg" asChild className="rounded-xl text-base px-8 h-12 border-white/20 text-white hover:bg-white/10 hover:text-white min-h-[44px]">
               <Link href="/contacto">
                 Solicitar cotización
               </Link>
@@ -117,8 +119,8 @@ export default function OEEBox() {
           </div>
         </div>
 
-        {/* Right — Andon Board mockup */}
-        <div className="flex justify-center lg:justify-end">
+        {/* Right — Andon Board mockup (below text on mobile) */}
+        <div className="flex justify-center lg:justify-end order-last lg:order-none">
           <AndonBoardMockup />
         </div>
       </div>

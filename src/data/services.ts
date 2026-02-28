@@ -8,6 +8,7 @@ export interface Service {
   tags: string[];
   ctaText: string;
   ctaHref: string;
+  featured?: boolean;
 }
 
 export const services: Service[] = [
@@ -28,6 +29,7 @@ export const services: Service[] = [
     tags: ["React", "PostgreSQL", "WebSocket", "Grafana"],
     ctaText: "Ver demo",
     ctaHref: "/contacto",
+    featured: true,
   },
   {
     title: "Integración de Datos Industriales",

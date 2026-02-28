@@ -49,28 +49,34 @@ export const skills: Skill[] = [
 
 export const experience: Experience[] = [
   {
+    year: "2006",
+    title: "Instrumentista — Minería (Perú)",
+    description:
+      "Inicio de carrera profesional en instrumentación y control en el sector minero.",
+  },
+  {
+    year: "2007",
+    title: "Programador PLC — Control Total SAC (Perú)",
+    description:
+      "Programación de PLCs y puesta en marcha de sistemas de control industrial.",
+  },
+  {
+    year: "2012",
+    title: "Control Engineer — Deneen Engineering (USA/Canadá)",
+    description:
+      "Ingeniería de control y automatización para proyectos internacionales en minería y energía.",
+  },
+  {
+    year: "2015",
+    title: "Gerente de Proyectos — GYS Control Industrial (Perú)",
+    description:
+      "Gestión de proyectos de automatización para clientes como Yanacocha, Antamina, Barrick y Statkraft.",
+  },
+  {
     year: "2024",
-    title: "Desarrollo Web Industrial Full-Stack",
+    title: "Desarrollador Full-Stack Industrial (Independiente)",
     description:
-      "Creación de aplicaciones web para monitoreo OEE, integración OT/IT y dashboards de producción con Next.js y Node.js.",
-  },
-  {
-    year: "2020",
-    title: "Integración OT/IT y Sistemas SCADA",
-    description:
-      "Conexión de PLCs y servidores Historian con bases de datos y APIs REST para digitalización de procesos industriales.",
-  },
-  {
-    year: "2016",
-    title: "Automatización y Control Industrial",
-    description:
-      "Programación de PLCs Allen-Bradley, Siemens y Schneider. Puesta en marcha de líneas de producción en minería, energía y manufactura.",
-  },
-  {
-    year: "2013",
-    title: "Ingeniería Electrónica",
-    description:
-      "Inicio de carrera profesional en ingeniería de control y automatización industrial.",
+      "Desarrollo de software industrial: monitoreo OEE, integración OT/IT y dashboards de producción con Next.js y Node.js.",
   },
 ];
 

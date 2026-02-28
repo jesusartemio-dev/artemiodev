@@ -68,6 +68,10 @@ export default function SobreMi() {
               Full-Stack OT/IT
             </Badge>
           </div>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mt-4 text-sm text-[#5a6270]">
+            <span>🌎 Proyectos en: Perú · USA · Canadá · Ecuador</span>
+            <span>🇬🇧 Inglés avanzado</span>
+          </div>
         </div>
       </ScrollReveal>
 
@@ -77,12 +81,7 @@ export default function SobreMi() {
           <section>
             <h2 className="text-2xl font-bold text-[#0a0f1e] mb-4">Bio Profesional</h2>
             <p className="text-[#5a6270] leading-relaxed">
-              Soy <strong className="text-[#0a0f1e]">Jesús Artemio Mamani</strong>, ingeniero electrónico y desarrollador full-stack con más de una década de experiencia en <strong className="text-[#0a0f1e]">automatización y control industrial</strong>.
-              He trabajado en proyectos para minería, energía, siderurgia y manufactura, integrando PLCs, SCADAs y sistemas industriales con plataformas web modernas.
-            </p>
-            <p className="text-[#5a6270] leading-relaxed mt-4">
-              Mi especialidad es la convergencia <strong className="text-[#0a0f1e]">OT/IT</strong>: conectar datos de planta con aplicaciones web, dashboards de producción, OEE y sistemas de gestión.
-              Utilizo tecnologías como <strong className="text-[#0a0f1e]">Next.js, Node.js, PostgreSQL, OPC UA y MQTT</strong> para transformar datos operativos en información estratégica para la toma de decisiones.
+              Ingeniero Electrónico con más de 18 años en automatización industrial. He trabajado en <strong className="text-[#0a0f1e]">minería, siderurgia, energía y manufactura</strong> en Perú, USA y Canadá. Inicié como instrumentista, progresé como programador PLC y Control Engineer en <strong className="text-[#0a0f1e]">Deneen Engineering (USA)</strong>, hasta gestionar proyectos para clientes como <strong className="text-[#0a0f1e]">Yanacocha, Antamina, Barrick y Statkraft</strong>. Hoy desarrollo software industrial que conecta datos de planta con decisiones de negocio.
             </p>
           </section>
         </ScrollReveal>

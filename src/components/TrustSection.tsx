@@ -1,75 +1,96 @@
-import { Cpu, Radio, Code2, Server } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+interface TechItem {
+  name: string;
+  emoji: string;
+}
 
 interface TechCategory {
   title: string;
-  icon: LucideIcon;
+  emoji: string;
   color: string;
   bgColor: string;
-  items: string[];
+  borderColor: string;
+  items: TechItem[];
 }
 
 const categories: TechCategory[] = [
   {
     title: "PLCs",
-    icon: Cpu,
-    color: "text-amber-600",
+    emoji: "🔧",
+    color: "text-amber-700",
     bgColor: "bg-amber-50",
-    items: ["Siemens", "Allen-Bradley", "Schneider"],
+    borderColor: "border-amber-200",
+    items: [
+      { name: "Siemens", emoji: "⚡" },
+      { name: "Allen-Bradley", emoji: "🔧" },
+      { name: "Schneider", emoji: "🏭" },
+    ],
   },
   {
     title: "Protocolos",
-    icon: Radio,
+    emoji: "📡",
     color: "text-[#0ea86a]",
     bgColor: "bg-[#e6f9f0]",
-    items: ["OPC UA", "MQTT", "Modbus"],
+    borderColor: "border-[#0ea86a]/20",
+    items: [
+      { name: "OPC UA", emoji: "🔗" },
+      { name: "MQTT", emoji: "📡" },
+      { name: "Modbus", emoji: "🔌" },
+    ],
   },
   {
     title: "Web",
-    icon: Code2,
+    emoji: "💻",
     color: "text-[#1847c2]",
     bgColor: "bg-[#f0f4ff]",
-    items: ["Next.js", "React", "Node.js", "TypeScript"],
+    borderColor: "border-[#1847c2]/20",
+    items: [
+      { name: "Next.js", emoji: "▲" },
+      { name: "React", emoji: "⚛️" },
+      { name: "Node.js", emoji: "🟢" },
+      { name: "TypeScript", emoji: "🔷" },
+    ],
   },
   {
     title: "Infra",
-    icon: Server,
+    emoji: "☁️",
     color: "text-purple-600",
     bgColor: "bg-purple-50",
-    items: ["PostgreSQL", "AWS", "Docker", "Grafana"],
+    borderColor: "border-purple-200",
+    items: [
+      { name: "PostgreSQL", emoji: "🐘" },
+      { name: "AWS", emoji: "☁️" },
+      { name: "Docker", emoji: "🐳" },
+      { name: "Grafana", emoji: "📊" },
+    ],
   },
 ];
 
 export default function TrustSection() {
   return (
-    <section className="py-16">
-      <p className="text-center text-sm font-semibold text-[#5a6270] uppercase tracking-widest mb-10">
+    <section className="py-12 sm:py-16">
+      <p className="text-center text-sm font-semibold text-[#5a6270] uppercase tracking-widest mb-8 sm:mb-10">
         Tecnologías con las que trabajo
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {categories.map((cat) => {
-          const Icon = cat.icon;
-          return (
-            <div key={cat.title} className="rounded-2xl border border-[#e2e6ee] bg-white p-5 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-9 h-9 rounded-xl ${cat.bgColor} flex items-center justify-center`}>
-                  <Icon className={`w-4.5 h-4.5 ${cat.color}`} />
-                </div>
-                <span className="text-sm font-bold text-[#0a0f1e] uppercase tracking-wide">{cat.title}</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {cat.items.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#f4f6f9] text-[#5a6270] border border-[#e2e6ee]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        {categories.map((cat) => (
+          <div key={cat.title} className={`rounded-2xl border ${cat.borderColor} bg-white p-4 sm:p-5 hover:shadow-md transition-shadow`}>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-lg" role="img" aria-hidden="true">{cat.emoji}</span>
+              <span className={`text-sm font-bold ${cat.color} uppercase tracking-wide`}>{cat.title}</span>
             </div>
-          );
-        })}
+            <div className="flex flex-col gap-2">
+              {cat.items.map((item) => (
+                <div
+                  key={item.name}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl ${cat.bgColor} text-xs sm:text-sm font-medium text-[#0a0f1e]`}
+                >
+                  <span className="text-sm shrink-0" role="img" aria-hidden="true">{item.emoji}</span>
+                  {item.name}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

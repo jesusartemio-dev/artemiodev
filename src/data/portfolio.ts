@@ -7,8 +7,7 @@ export interface CaseStudy {
   solution: string;
   result: string;
   icon: LucideIcon;
-  gradientFrom: string;
-  gradientTo: string;
+  gradient: string;
   tags: string[];
 }
 
@@ -21,8 +20,7 @@ export const caseStudies: CaseStudy[] = [
       "Aplicación web desarrollada con Next.js y Node.js que se comunica con OPC UA para leer datos de producción y generar reportes automáticos.",
     result: "Mejora del 20% en disponibilidad",
     icon: BarChart3,
-    gradientFrom: "from-blue-500",
-    gradientTo: "to-cyan-400",
+    gradient: "bg-gradient-to-br from-[#1847c2] to-[#2563eb]",
     tags: ["Next.js", "OPC UA", "Siemens", "Node.js"],
   },
   {
@@ -33,8 +31,7 @@ export const caseStudies: CaseStudy[] = [
       "Desarrollo de API REST que conecta PLC Allen-Bradley con servidor Historian y dashboard web para visualización de datos operativos.",
     result: "Monitoreo 24/7 y reducción de downtime",
     icon: Cpu,
-    gradientFrom: "from-indigo-500",
-    gradientTo: "to-purple-400",
+    gradient: "bg-gradient-to-br from-[#0ea86a] to-[#059669]",
     tags: ["Allen-Bradley", "REST API", "Historian", "React"],
   },
   {
@@ -45,8 +42,7 @@ export const caseStudies: CaseStudy[] = [
       "Sistema SCADA conectado a PostgreSQL mediante MQTT, con dashboard Next.js para seguimiento de producción y calidad.",
     result: "Trazabilidad 100% y +15% eficiencia",
     icon: PackageCheck,
-    gradientFrom: "from-emerald-500",
-    gradientTo: "to-teal-400",
+    gradient: "bg-gradient-to-br from-[#f06000] to-[#ea580c]",
     tags: ["MQTT", "PostgreSQL", "SCADA", "Next.js"],
   },
 ];
