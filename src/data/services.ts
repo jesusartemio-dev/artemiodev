@@ -27,7 +27,7 @@ export const services: Service[] = [
       "Sistemas de monitoreo de eficiencia general de equipos con dashboards en tiempo real.",
     icon: BarChart3,
     tags: ["React", "PostgreSQL", "WebSocket", "Grafana"],
-    ctaText: "Ver demo",
+    ctaText: "Solicitar demo",
     ctaHref: "/contacto",
     featured: true,
   },
