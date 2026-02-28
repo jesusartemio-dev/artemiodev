@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 import { z } from "zod";
+
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) throw new Error("RESEND_API_KEY is not configured");
+  return new Resend(apiKey);
+}
 
 // Rate limiting (in-memory)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -92,19 +99,29 @@ export async function POST(request: NextRequest) {
 
     const data = result.data;
 
-    // Log structured data (replace with email service in production)
-    console.log("=== Nuevo mensaje de contacto ===");
-    console.log(JSON.stringify(data, null, 2));
+    const urgencyLabels: Record<string, string> = {
+      evaluation: "En evaluación",
+      month: "Este mes",
+      week: "Esta semana",
+    };
 
-    // TODO: Integrate with Resend when API key is available
-    // import { Resend } from 'resend';
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'Contacto <contacto@jesusartemio.dev>',
-    //   to: ['jesus@jesusartemio.dev'],
-    //   subject: `Nuevo contacto: ${data.name} - ${data.company}`,
-    //   html: `...`,
-    // });
+    await getResend().emails.send({
+      from: "onboarding@resend.dev",
+      to: ["jesusartemio.dev@gmail.com"],
+      subject: `Nuevo contacto desde artemiodev.com: ${data.name} - ${data.company}`,
+      html: `
+        <h2>Nuevo mensaje de contacto</h2>
+        <p><strong>Nombre:</strong> ${data.name}</p>
+        <p><strong>Empresa:</strong> ${data.company}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Teléfono:</strong> ${data.phone || "No proporcionado"}</p>
+        <p><strong>Urgencia:</strong> ${urgencyLabels[data.urgency] || data.urgency}</p>
+        <p><strong>NDA:</strong> ${data.nda ? "Sí, solicita NDA" : "No"}</p>
+        <hr />
+        <p><strong>Mensaje:</strong></p>
+        <p>${data.message}</p>
+      `,
+    });
 
     return NextResponse.json({
       success: true,
